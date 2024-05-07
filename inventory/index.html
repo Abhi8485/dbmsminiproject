@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #555;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        input[type="text"], input[type="number"], button {
+            padding: 8px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        #updateForm {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .btn-group {
+            margin-top: 10px;
+        }
+
+        .btn-group button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inventory Management System</h1>
+
+    <h2>Add Product</h2>
+    <form id="addProductForm">
+        <input type="text" name="id" id="productId" placeholder="Product ID" required>
+        <input type="text" name="name" id="productName" placeholder="Product Name" required>
+        <input type="number" name="price" id="productPrice" placeholder="Price" step="0.01" required>
+        <input type="number" name="quantity" id="productQuantity" placeholder="Quantity" required>
+        <button type="button" onclick="addProduct()">Add Product</button>
+    </form>
+
+    <h2>Products in Inventory</h2>
+    <table id="productTable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+        <!-- Product list will be dynamically updated here -->
+    </table>
+
+    <!-- Update Product Form (hidden by default) -->
+    <div id="updateForm" style="display: none;">
+        <h2>Update Product</h2>
+        <form id="updateProductForm">
+            <input type="hidden" name="id" id="updateId">
+            <input type="text" name="name" id="updateName" required>
+            <input type="number" name="price" id="updatePrice" step="0.01" required>
+            <input type="number" name="quantity" id="updateQuantity" required>
+            <div class="btn-group">
+                <button type="button" onclick="updateProduct()">Update Product</button>
+                <button type="button" onclick="hideUpdateForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript functions remain the same as in the previous code
+    </script>
+</body>
+</html>
